@@ -1,27 +1,27 @@
 #!/bin/sh
 # Configs quick access
-alias nvimrc='nvim ~/.config/nvim/'
-alias lvimrc='nvim ~/.config/lvim/config.lua'
+alias nvimrc=#!/bin/sh
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
-# Colorize grep output (good for log files)
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+# Source
+plug "$HOME/.config/zsh/aliases.zsh"
+plug "$HOME/.config/zsh/exports.zsh"
 
-# List every file colorized automatically
-alias ls='ls --color=auto'
-alias lsa='ls -a'
+# Plugins
+plug "zap-zsh/supercharge"
+plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "hlissner/zsh-autopair"
+plug "zap-zsh/fzf"
+plug "zap-zsh/vim"
 
-# Confirm before overwriting something
-alias cp="cp -i"
-alias mv='mv -i'
-alias rm='rm -i'
+# History
+HISTFILE=~/.zsh_history
 
-# Git (lazygit)
-alias lg='lazygit'
+# Prompt theme
+plug "zap-zsh/zap-prompt"
 
-# For when keys break
-alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
+# Keybinds
+bindkey -v
 
-# systemd
-alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
+export PATH="$HOME/.local/bin":$PATH'nvim ~/.config/nvim/'
