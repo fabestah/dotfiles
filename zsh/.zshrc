@@ -25,3 +25,6 @@ plug "zap-zsh/zap-prompt"
 bindkey -v
 
 export PATH="$HOME/.local/bin":$PATH'nvim ~/.config/nvim/'
+
+# Run on startup
+pfetch
