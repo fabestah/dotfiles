@@ -34,7 +34,7 @@ keys = [
         desc="Launch my browser"
         ),
     Key([mod, "shift"], "Return",
-        lazy.spawn("rofi -show window"),
+        lazy.spawn("rofi -show drun "),
         desc="Run Rofi"
         ),
     ### Window Controls
