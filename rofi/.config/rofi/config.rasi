@@ -1,5 +1,5 @@
 configuration {
-	modes: "window,drun,run,ssh";
+	modes: "window,drun,run,ssh,emoji";
 	font: "ttf-hack-nerd";
 /*	location: 0;*/
 /*	yoffset: 0;*/
@@ -149,3 +149,4 @@ configuration {
       sorting-method:    "name";
   }
 }
+@theme "/usr/share/rofi/themes/arthur.rasi"

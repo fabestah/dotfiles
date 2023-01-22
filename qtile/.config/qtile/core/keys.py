@@ -37,6 +37,10 @@ keys = [
         lazy.spawn("rofi -show drun "),
         desc="Run Rofi"
         ),
+    Key([mod, "shift"], "e",
+        lazy.spawn("rofi -show emoji"),
+        desc="Run Rofi emoji plugin"
+        ),
     ### Window Controls
     # Move Focus
     Key([mod], "j",
