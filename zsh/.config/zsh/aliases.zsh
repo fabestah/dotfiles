@@ -1,7 +1,7 @@
 #!/bin/sh
 # Configs quick access
-alias nvimrc='nvim ~/.config/nvim/'
-alias lvimrc='nvim ~/.config/lvim/config.lua'
+alias nvimrc='lvim ~/.config/nvim/'
+alias lvimrc='lvim ~/.config/lvim/config.lua'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -19,6 +19,9 @@ alias rm='rm -i'
 
 # Git (lazygit)
 alias lg='lazygit'
+
+# LunarVim
+alias lv='lvim'
 
 # For when keys break
 alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
