@@ -1,6 +1,4 @@
 #!/bin/sh
-# Configs quick access
-alias nvimrc=#!/bin/sh
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 # Source
@@ -15,16 +13,16 @@ plug "hlissner/zsh-autopair"
 plug "zap-zsh/fzf"
 plug "zap-zsh/vim"
 
-# History
-HISTFILE=~/.zsh_history
-
 # Prompt theme
 plug "zap-zsh/zap-prompt"
+
+# Run on startup
+pfetch
+
+# History
+HISTFILE=~/.zsh_history
 
 # Keybinds
 bindkey -v
 
 export PATH="$HOME/.local/bin":$PATH'nvim ~/.config/nvim/'
-
-# Run on startup
-pfetch
