@@ -7,6 +7,8 @@ from core import (
         keys,
         mod,
         shift,
+        layouts,
+        floating_layout,
 
 )
 
@@ -15,53 +17,6 @@ from libqtile.dgroups import simple_key_binder
 TERMINAL = "kitty"
 BROWSER = "librewolf"
 FONT_MAIN = "ttf-hack-nerd"
-
-
-#  LAYOUTS 
-
-LAYOUT_THEME_MAIN = {"border_width": 1,
-                "margin": 14,
-                "border_focus": "e1acff",
-                "border_normal": "1D2330"
-                }
-
-layouts = [
-    # layout.MonadWide(**layout_theme),
-    # layout.Bsp(**layout_theme),
-    # layout.Stack(stacks=2, **layout_theme),
-    # layout.Columns(**layout_theme),
-    # layout.RatioTile(**layout_theme),
-    # layout.Tile(shift_windows=True, **layout_theme),
-    # layout.VerticalTile(**layout_theme),
-    # layout.Matrix(**layout_theme),
-    # layout.Zoomy(**layout_theme),
-    # layout.Max(**layout_theme),
-    layout.MonadTall(**LAYOUT_THEME_MAIN),
-    layout.MonadWide(**LAYOUT_THEME_MAIN),
-    layout.Stack(num_stacks=2),
-    layout.TreeTab(
-         font = "Ubuntu",
-         fontsize = 10,
-         sections = ["FIRST", "SECOND", "THIRD", "FOURTH"],
-         section_fontsize = 10,
-         border_width = 2,
-         bg_color = "1c1f24",
-         active_bg = "c678dd",
-         active_fg = "000000",
-         inactive_bg = "a9a1e1",
-         inactive_fg = "1c1f24",
-         padding_left = 0,
-         padding_x = 0,
-         padding_y = 5,
-         section_top = 10,
-         section_bottom = 20,
-         level_shift = 8,
-         vspace = 3,
-         panel_width = 200
-         ),
-    layout.Floating(**LAYOUT_THEME_MAIN)
-]
-
 
 #  WIDGETS 
 
@@ -151,18 +106,6 @@ dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(
-    float_rules=[
-        # Run the utility of `xprop` to see the wm class and name of an X client.
-        *layout.Floating.default_float_rules,
-        Match(wm_class="confirmreset"),  # gitk
-        Match(wm_class="makebranch"),  # gitk
-        Match(wm_class="maketag"),  # gitk
-        Match(wm_class="ssh-askpass"),  # ssh-askpass
-        Match(title="branchdialog"),  # gitk
-        Match(title="pinentry"),  # GPG key password entry
-    ]
-)
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
