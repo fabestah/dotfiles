@@ -2,6 +2,7 @@
 # Configs quick access
 alias nvimrc='lvim ~/.config/nvim/'
 alias lvimrc='lvim ~/.config/lvim/config.lua'
+alias qtilecfg='cd ~/Projects/dotfiles/qtile/.config/qtile/'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
