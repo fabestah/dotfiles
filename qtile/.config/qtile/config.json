@@ -1,6 +1,0 @@
-{
-  "bar": "decorated",
-  "colorscheme": "catppuccin",
-  "terminal": "kitty",
-  "wallpaper": "~/.config/qtile/wallpapers/borderlands-zero.png"
-}
