@@ -6,7 +6,10 @@ variables = {
     'bar': 'decorated',
     'colorscheme': 'catppuccin',
     'terminal': 'kitty',
-    'wallpaper': '~/.config/qtile/wallpapers/borderlands-zero.png',
+    'wallpaper_main': '~/.config/qtile/wallpapers/borderlands-zero.png',
+    'with_battery': False,
+    'with_wlan': False,
+    'two_monitors': False,
 }
 
 try:
