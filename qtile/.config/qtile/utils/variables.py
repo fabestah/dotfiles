@@ -6,7 +6,7 @@ variables = {
     'bar': 'decorated',
     'colorscheme': 'catppuccin',
     'terminal': 'kitty',
-    'wallpaper_main': '~/.config/qtile/wallpapers/borderlands-zero.png',
+    'wallpaper_main': '~/Pictures/Wallpapers/floating_astronaut.png',
     'with_battery': False,
     'with_wlan': False,
     'two_monitors': False,

@@ -57,7 +57,7 @@ workspace_names = [
 ]
 
 # General
-wallpaper_main = "~/.config/qtile/wallpapers/borderlands-zero.png"
+wallpaper_main = "~/Pictures/Wallpapers/floating_astronaut.png"
 # wallpaper_sec = "~/.config/qtile/wallpapers/hk1.jpg"
 
 # Hardware
