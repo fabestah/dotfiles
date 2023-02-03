@@ -1,7 +1,7 @@
 from libqtile.config import Key, KeyChord
 from libqtile.lazy import lazy
 
-mod = "mod1"
+mod = "mod1" # mod1 = Alt | mod4 = Super
 shift = "shift"
 terminal = "kitty"
 browser = "librewolf"

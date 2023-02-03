@@ -118,7 +118,7 @@ w_hk = widget.Image(
     margin_x=14,
     margin_y=3,
     mouse_callbacks={'Button1': open_launcher},
-    filename='~/.config/qtile/icons/hkskull.png',
+    filename='~/Pictures/Icons/Borderlands/bl2-vault-symbol-red-transparent.png',
 )
 
 # left icon
@@ -193,7 +193,7 @@ def gen_current_layout():
 
     return (
         widget.CurrentLayoutIcon(
-            custom_icon_paths=[os.path.expanduser('~/.config/qtile/icons')],
+            custom_icon_paths=[os.path.expanduser('~/Pictures/Icons/Qtile')],
             scale=0.65,
             use_mask=True,
             foreground=color['bg'],
