@@ -39,6 +39,7 @@ for workspace in workspaces:
         )
     )
 
+# Drop-down Programs:
 groups.append(
     ScratchPad(
         "scratchpad",
@@ -48,9 +49,9 @@ groups.append(
                 "kitty",
                 opacity=1,
                 x=0.1,
-                y=0.15,
+                y=0.08,
                 width=0.8,
-                height=0.7,
+                height=0.85,
                 on_focus_lost_hide=True,
             ),
             DropDown(
