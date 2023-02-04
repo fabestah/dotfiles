@@ -8,7 +8,7 @@ browser = "librewolf"
 
 keys = [
     ### General Shortcuts
-    Key([mod, "shift"], "c",
+    Key([mod, shift], "c",
         lazy.window.kill(),
         desc="Kill active window"
         ),
@@ -20,7 +20,7 @@ keys = [
         lazy.shutdown(),
         desc="Shutdown Qtile"
         ),
-    ### Spawn Apps
+    ### Launch Programs
     Key([mod], "r",
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"
@@ -33,13 +33,22 @@ keys = [
         lazy.spawn(browser),
         desc="Launch my browser"
         ),
-    Key([mod, "shift"], "Return",
+    Key([mod, shift], "Return",
         lazy.spawn("rofi -show drun "),
         desc="Run Rofi"
         ),
-    Key([mod, "shift"], "e",
+    Key([mod, shift], "e",
         lazy.spawn("rofi -show emoji"),
         desc="Run Rofi emoji plugin"
+        ),
+    # Drop-down Programs
+    Key([mod], "t",
+        lazy.group["scratchpad"].dropdown_toggle("term"),
+        desc="Toggle drop-down kitty terminal"
+        ),
+    Key([mod, shift], "t",
+        lazy.group["scratchpad"].dropdown_toggle("btop-term"),
+        desc="Toggle drop-down btop ressource monitor"
         ),
     ### Window Controls
     # Move Focus
@@ -76,17 +85,17 @@ keys = [
         ),
     ### Stack Controls
     # Move Windows
-    Key([mod, "shift"], "j",
+    Key([mod, shift], "j",
         lazy.layout.shuffle_down(),
         lazy.layout.section_down(),
         desc="Move window down in current stack"
         ), 
-    Key([mod, "shift"], "k",
+    Key([mod, shift], "k",
         lazy.layout.shuffle_up(),
         lazy.layout.section_up(),
         desc="Move window up in current stack"
         ),
-    Key([mod, "shift"], "Tab",
+    Key([mod, shift], "Tab",
         lazy.layout.rotate(),
         lazy.layout.flip(),
         desc='Switch which side main pane occupies (MonadTall)'
@@ -96,7 +105,7 @@ keys = [
         lazy.next_layout(),
         desc="Toggle through layouts"
         ),
-    Key([mod, "shift"], "f",
+    Key([mod, shift], "f",
         lazy.window.toggle_floating(),
         desc="Toggle floating"
         ),
@@ -105,7 +114,7 @@ keys = [
         desc="Toggle fullscreen"
         ),
 
-    Key([mod, "shift"], "space",
+    Key([mod, shift], "space",
         lazy.layout.toggle_split(),
         desc='Toggle between split and unsplit sides of stack'
         ),
