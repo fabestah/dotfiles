@@ -1,8 +1,8 @@
 from libqtile import bar, qtile, lazy
 
-from qtile_extras import widget
-from qtile_extras.widget import decorations
-from qtile_extras.widget.decorations import RectDecoration
+from qtile_extras import widget    # type: ignore
+from qtile_extras.widget import decorations    # type: ignore
+from qtile_extras.widget.decorations import RectDecoration    # type: ignore
 
 from utils.settings import workspace_names
 from utils import color, config

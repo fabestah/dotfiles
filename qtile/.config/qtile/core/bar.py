@@ -1,4 +1,4 @@
-from qtile_extras import widget
+from qtile_extras import widget    # type: ignore
 from core.widgets import *
 from utils import color, config
 
