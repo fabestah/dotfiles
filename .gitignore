@@ -1,1 +1,4 @@
-.mypy_cache
+*.mypy_cache
+*.pyc
+
+state.yml
