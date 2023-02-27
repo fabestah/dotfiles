@@ -1,13 +1,25 @@
 from libqtile.config import Key, KeyChord
 from libqtile.lazy import lazy
 
+from utils.lazy_functions import (
+        move_window_to_next_screen,
+        move_window_to_prev_screen,
+        move_focus_to_next_screen,
+        move_focus_to_prev_screen,
+        )
+
+
+
 mod = "mod1" # mod1 = Alt | mod4 = Super
 shift = "shift"
+
 terminal = "kitty"
 browser = "librewolf"
 
+
+
 keys = [
-    ### General Shortcuts
+    ### General
     Key([mod, shift], "c",
         lazy.window.kill(),
         desc="Kill active window"
@@ -20,7 +32,103 @@ keys = [
         lazy.shutdown(),
         desc="Shutdown Qtile"
         ),
-    ### Launch Programs
+    ### Move focus
+    Key([mod], "j",
+        lazy.layout.down(),
+        desc="Move focus down"
+        ),
+    Key([mod], "k",
+        lazy.layout.up(),
+        desc="Move focus up"
+        ),
+    Key([mod], "space",
+        lazy.layout.next(),
+        desc='Move focus to next window in current stack'
+        ),
+    #Key([mod], r_shift,
+    #    lazy.next_screen(),
+    #    desc='Move focus to next monitor'
+    #   ),
+    Key([mod], "comma",
+        move_focus_to_next_screen,
+        desc='Move focus to next screen'
+        ),
+    Key([mod], "period",
+        move_focus_to_prev_screen,
+        desc='Move focus to previous screen'
+        ),
+    ### Adjust window size
+    Key([mod], "h",
+        lazy.layout.shrink(),
+        lazy.layout.decrease_nmaster(),
+        desc="Shrink window (MonadTall), decrease number in master pane (Tile)"
+        ),
+    Key([mod], "l",
+        lazy.layout.grow(),
+        lazy.layout.increase_nmaster(),
+        desc="Expand window (MonadTall), increase number in master pane (Tile)"
+        ),
+    Key([mod], "n",
+        lazy.layout.reset(),
+        desc="Reset window size ratios"
+        ),
+    Key([mod], "m",
+        lazy.layout.maximize(),
+        desc="Toggle window between minimum and maximum sizes"
+        ),
+    ### Move windows
+    Key([mod, shift], "j",
+        lazy.layout.shuffle_down(),
+        lazy.layout.section_down(),
+        desc="Move window down in current stack"
+        ), 
+    Key([mod, shift], "k",
+        lazy.layout.shuffle_up(),
+        lazy.layout.section_up(),
+        desc="Move window up in current stack"
+        ),
+    Key([mod, shift], "Tab",
+        lazy.layout.rotate(),
+        lazy.layout.flip(),
+        desc='Switch which side main pane occupies (MonadTall)'
+        ),
+    Key([mod,"shift"],  "comma",
+        move_window_to_next_screen,
+        desc="Move window to next screen"
+        ),
+    Key([mod,"shift"],  "period",
+        move_window_to_prev_screen,
+        desc="Move window to previous screen"
+        ),
+    ### Toggles
+    Key([mod], "Tab",
+        lazy.next_layout(),
+        desc="Toggle through layouts forward"
+        ),
+Key([mod, shift], "Tab",
+        lazy.prev_layout(),
+        desc="Toggle through layouts backwards"
+        ),
+    Key([mod, shift], "f",
+        lazy.window.toggle_floating(),
+        desc="Toggle floating"
+        ),
+    Key([mod], "f",
+        lazy.window.toggle_fullscreen(),
+        desc="Toggle fullscreen"
+        ),
+
+    Key([mod, shift], "space",
+        lazy.layout.toggle_split(),
+        desc='Toggle between split and unsplit sides of stack'
+        ),
+    # Split = all windows displayed
+    # Unsplit = 1 window displayed, like Max layout, but still with multiple stack panes
+    Key([mod], "m",
+        lazy.window.toggle_maximize(),
+        desc="Toggle window between minimum and maximum size"
+        ),
+    ### Programs
     Key([mod], "r",
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"
@@ -41,7 +149,6 @@ keys = [
         lazy.spawn("rofi -show emoji"),
         desc="Run Rofi emoji plugin"
         ),
-    # Drop-down Programs
     Key([mod], "t",
         lazy.group["scratchpad"].dropdown_toggle("term"),
         desc="Toggle drop-down kitty terminal"
@@ -50,77 +157,5 @@ keys = [
         lazy.group["scratchpad"].dropdown_toggle("btop-term"),
         desc="Toggle drop-down btop ressource monitor"
         ),
-    ### Window Controls
-    # Move Focus
-    Key([mod], "j",
-        lazy.layout.down(),
-        desc="Move focus down"
-        ),
-    Key([mod], "k",
-        lazy.layout.up(),
-        desc="Move focus up"
-        ),
-    Key([mod], "space",
-        lazy.layout.next(),
-        desc='Move focus to next window in current stack'
-        ),
-    # Adjust Window Size
-    Key([mod], "h",
-        lazy.layout.shrink(),
-        lazy.layout.decrease_nmaster(),
-        desc="Shrink window (MonadTall), decrease number in master pane (Tile)"
-        ),
-    Key([mod], "l",
-        lazy.layout.grow(),
-        lazy.layout.increase_nmaster(),
-        desc="Expand window (MonadTall), increase number in master pane (Tile)"
-        ),
-    Key([mod], "n",
-        lazy.layout.reset(),
-        desc="Reset window size ratios"
-        ),
-    Key([mod], "m",
-        lazy.layout.maximize(),
-        desc="Toggle window between minimum and maximum sizes"
-        ),
-    ### Stack Controls
-    # Move Windows
-    Key([mod, shift], "j",
-        lazy.layout.shuffle_down(),
-        lazy.layout.section_down(),
-        desc="Move window down in current stack"
-        ), 
-    Key([mod, shift], "k",
-        lazy.layout.shuffle_up(),
-        lazy.layout.section_up(),
-        desc="Move window up in current stack"
-        ),
-    Key([mod, shift], "Tab",
-        lazy.layout.rotate(),
-        lazy.layout.flip(),
-        desc='Switch which side main pane occupies (MonadTall)'
-        ),
-    # Toggles
-    Key([mod], "Tab",
-        lazy.next_layout(),
-        desc="Toggle through layouts"
-        ),
-    Key([mod, shift], "f",
-        lazy.window.toggle_floating(),
-        desc="Toggle floating"
-        ),
-    Key([mod], "f",
-        lazy.window.toggle_fullscreen(),
-        desc="Toggle fullscreen"
-        ),
-
-    Key([mod, shift], "space",
-        lazy.layout.toggle_split(),
-        desc='Toggle between split and unsplit sides of stack'
-        ),
-    # Toggle between split and unsplit sides of stack.
-    # Split = all windows displayed
-    # Unsplit = 1 window displayed, like Max layout, but still with
-    # multiple stack panes
+    # To-Do: Screenshots, Audio, Brightness, Misc, KeyChords
 ]
-
