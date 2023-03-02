@@ -24,6 +24,13 @@ alias lg='lazygit'
 # LunarVim
 alias lv='lvim'
 
+# Codium
+alias codium='code'
+
+# System controls
+alias reboot='sudo reboot'
+alias shutdownnow='shutdown +0'
+
 # For when keys break
 alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 
