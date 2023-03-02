@@ -15,6 +15,9 @@ shift = "shift"
 
 terminal = "kitty"
 browser = "librewolf"
+code_editor = "codium"
+note_app = "obsidian"
+crypto_app = "veracrypt"
 
 
 
@@ -135,11 +138,23 @@ Key([mod, shift], "Tab",
         ),
     Key([mod], "Return",
         lazy.spawn(terminal),
-        desc="Launch my terminal"
+        desc="Launch terminal"
         ),
     Key([mod], "b",
         lazy.spawn(browser),
-        desc="Launch my browser"
+        desc="Launch browser"
+        ),
+    Key([mod], "c",
+        lazy.spawn(code_editor),
+        desc="Launch VSCodium"
+        ),
+    Key([mod], "o",
+        lazy.spawn(note_app),
+        desc="Launch Obsidian"
+        ),
+     Key([mod], "v",
+        lazy.spawn(crypto_app),
+        desc="Launch VeraCrypt"
         ),
     Key([mod, shift], "Return",
         lazy.spawn("rofi -show drun "),
@@ -151,7 +166,7 @@ Key([mod, shift], "Tab",
         ),
     Key([mod], "t",
         lazy.group["scratchpad"].dropdown_toggle("term"),
-        desc="Toggle drop-down kitty terminal"
+        desc="Toggle drop-down Kitty terminal"
         ),
     Key([mod, shift], "t",
         lazy.group["scratchpad"].dropdown_toggle("btop-term"),
