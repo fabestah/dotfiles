@@ -12,4 +12,5 @@ export PATH=$HOME/.local/share/go/bin:$PATH
 export GOPATH=$HOME/.local/share/go
 export PATH=$HOME/.fnm:$PATH
 export PATH="$HOME/.local/share/neovim/bin":$PATH
+export $(dbus-launch) # keyring functionality for codium github login
 eval "$(zoxide init zsh)"
