@@ -54,3 +54,12 @@ def move_focus_to_prev_screen(_):
     index = qtile.current_screen.index
     index = index - 1 if index > 0 else len(qtile.screens) - 1
     qtile.focus_screen(qtile.screens[index].index)
+
+
+
+@lazy.function
+def minimize_all_windows(qtile):
+    """Minimizes all windows in focused group."""
+    for win in qtile.current_group.windows:
+        if hasattr(win, "toggle_minimize"):
+            win.toggle_minimize()
