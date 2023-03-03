@@ -9,6 +9,8 @@ from utils import color, config
 
 import os
 
+
+
 home = os.path.expanduser('~')
 
 group_box_settings = {
@@ -33,16 +35,32 @@ group_box_settings = {
 }
 
 # functions for callbacks
-def open_launcher():
-    qtile.cmd_spawn('rofi -show drun -theme ~/.config/rofi/launcher.rasi')
 
 
-# def open_powermenu():
-#     qtile.cmd_spawn('' + home + '/.local/bin/power')
+#def open_launcher():
+#    qtile.cmd_spawn('rofi -show drun -theme ~/.config/rofi/launcher.rasi')
 
 
-# def open_calendar():
-#     qtile.cmd_spawn('' + home + '/.local/bin/toggle_cal')
+#def open_powermenu():
+#    qtile.cmd_spawn('' + home + '/.local/bin/power')
+
+
+#def open_calendar():
+#    qtile.cmd_spawn('' + home + '/.local/bin/toggle_cal')
+
+
+#def parse_window_name(text):
+#    '''Simplifies the names of a few windows, to be displayed in the bar'''
+#    target_names = [
+#        'Mozilla Firefox',
+#        'Visual Studio Code',
+#        'Discord',
+#    ]
+#    try:
+#        return next(filter(lambda name: name in text, target_names), text)
+#    except TypeError:
+#        return text
+
 
 
 def parse_window_name(text):
@@ -58,6 +76,7 @@ def parse_window_name(text):
         return text
 
 
+
 # separator
 def separator():
     return widget.Sep(
@@ -66,6 +85,7 @@ def separator():
         padding=4,
         linewidth=3,
     )
+
 
 
 def separator_sm():
@@ -78,6 +98,7 @@ def separator_sm():
     )
 
 
+
 # widget decorations
 base_decor = {
     'colour': color['black'],
@@ -85,6 +106,7 @@ base_decor = {
     'padding_y': 4,
     'line_width': 0,
 }
+
 
 
 def _left_decor(color: str, padding_x=None, padding_y=4, round=False):
@@ -100,6 +122,7 @@ def _left_decor(color: str, padding_x=None, padding_y=4, round=False):
     ]
 
 
+
 def _right_decor(round=False):
     radius = 4 if round else [0, 4, 4, 0]
     return [
@@ -112,14 +135,18 @@ def _right_decor(round=False):
         )
     ]
 
+
+
 # hollow knight icon
 w_hk = widget.Image(
     background=color['fg'],
     margin_x=14,
     margin_y=3,
-    mouse_callbacks={'Button1': open_launcher},
+    #mouse_callbacks={'Button1': open_launcher},
     filename='~/Pictures/Icons/Borderlands/bl2-vault-symbol-red-transparent.png',
 )
+
+
 
 # left icon
 w_sys_icon = widget.TextBox(
@@ -136,8 +163,9 @@ w_sys_icon = widget.TextBox(
     # foreground=color['maroon'],
     background=color['fg'],
     padding=16,
-    mouse_callbacks={'Button1': open_launcher},
+    #mouse_callbacks={'Button1': open_launcher},
 )
+
 
 
 # workspace groups
@@ -161,25 +189,49 @@ def chord():
     )
 
 
+
 # spacers
 def gen_spacer():
     return widget.Spacer()
 
 
-# window name
-w_window_name_icon = widget.TextBox(
-    text=' ',
-    foreground='#ffffff',
-    font='Font Awesome 6 Free Solid',
-)
 
-w_window_name = widget.WindowName(
-    foreground='#ffffff',
-    width=bar.CALCULATED,
-    empty_group_string='Desktop',
-    max_chars=40,
-    parse_text=parse_window_name,
-)
+# window name
+def parse_window_name(text):
+    '''Simplifies the names of a few windows, to be displayed in the bar'''
+    target_names = [
+        'Mozilla Firefox',
+        'Visual Studio Code',
+        'Discord',
+    ]
+    try:
+        return next(filter(lambda name: name in text, target_names), text)
+    except TypeError:
+        return text
+
+
+def window_name():
+    '''Displays focused file, path and application'''
+    return (
+        # window name icon
+        widget.TextBox(
+            text=' ',
+            foreground='#ffffff',
+            font='Font Awesome 6 Free Solid',
+            fontsize=18,
+        ),
+        # window name
+        widget.WindowName(
+            foreground='#ffffff',
+            width=bar.CALCULATED,
+            empty_group_string=' ',
+            max_chars=50,
+            fontsize=14,
+            parse_text=parse_window_name,
+        )
+    )
+
+
 
 # systray
 w_systray = widget.Systray(
@@ -187,13 +239,15 @@ w_systray = widget.Systray(
     icon_size=20,
 )
 
+
+
 # current layout
 def gen_current_layout():
     w_color = color['pink']
 
     return (
         widget.CurrentLayoutIcon(
-            custom_icon_paths=[os.path.expanduser('~/Pictures/Icons/Qtile')],
+            custom_icon_paths=[os.path.expanduser('~/pictures/icons/qtile')],
             scale=0.65,
             use_mask=True,
             foreground=color['bg'],
@@ -207,6 +261,7 @@ def gen_current_layout():
         ),
         separator(),
     )
+
 
 
 # battery
@@ -239,6 +294,8 @@ w_battery = (
     else ()
 )
 
+
+
 # volume
 w_volume_icon = widget.TextBox(
     text='墳',
@@ -256,6 +313,8 @@ w_volume = widget.PulseVolume(
     padding=8,
     decorations=_right_decor(),
 )
+
+
 
 # internet
 w_wlan = (
@@ -293,6 +352,8 @@ w_wlan = (
     else ()
 )
 
+
+
 # time, calendar
 def gen_clock():
     w_color = color['blue']
@@ -319,6 +380,7 @@ def gen_clock():
     )
 
 
+
 # power menu
 w_power = widget.TextBox(
     text='⏻',
@@ -339,6 +401,8 @@ w_test = widget.WidgetBox(
     widgets=[w_systray],
     decorations=_left_decor(color['maroon']),
 )
+
+
 
 # widget box
 w_box = widget.WidgetBox(
@@ -362,6 +426,7 @@ w_box = widget.WidgetBox(
         # TODO uptime, CPU, temp, diskfree, memory
     ],
 )
+
 
 
 # TESTING
