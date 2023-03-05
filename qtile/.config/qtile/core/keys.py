@@ -6,6 +6,7 @@ from utils.lazy_functions import (
         move_window_to_prev_screen,
         move_focus_to_next_screen,
         move_focus_to_prev_screen,
+        minimize_all_windows,
         )
 
 
@@ -15,6 +16,7 @@ shift = "shift"
 
 terminal = "kitty"
 browser = "librewolf"
+mail_client = "thunderbird"
 code_editor = "codium"
 note_app = "obsidian"
 crypto_app = "veracrypt"
@@ -61,21 +63,21 @@ keys = [
         desc='Move focus to previous screen'
         ),
     ### Adjust window size
-    Key([mod], "h",
+    Key([mod, shift], "h",
         lazy.layout.shrink(),
         lazy.layout.decrease_nmaster(),
         desc="Shrink window (MonadTall), decrease number in master pane (Tile)"
         ),
-    Key([mod], "l",
+    Key([mod, shift], "l",
         lazy.layout.grow(),
         lazy.layout.increase_nmaster(),
         desc="Expand window (MonadTall), increase number in master pane (Tile)"
         ),
-    Key([mod], "n",
+    Key([mod, shift], "r",
         lazy.layout.reset(),
         desc="Reset window size ratios"
         ),
-    Key([mod], "m",
+    Key([mod, shift], "m",
         lazy.layout.maximize(),
         desc="Toggle window between minimum and maximum sizes"
         ),
@@ -102,6 +104,10 @@ keys = [
     Key([mod,"shift"],  "period",
         move_window_to_prev_screen,
         desc="Move window to previous screen"
+        ),
+    Key([mod,"shift"],  "minus",
+        minimize_all_windows,
+        desc="Minimize all windows in focused group"
         ),
     ### Toggles
     Key([mod], "Tab",
@@ -132,7 +138,7 @@ Key([mod, shift], "Tab",
         desc="Toggle window between minimum and maximum size"
         ),
     ### Programs
-    Key([mod], "r",
+    Key([mod], "s",
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"
         ),
@@ -143,6 +149,10 @@ Key([mod, shift], "Tab",
     Key([mod], "b",
         lazy.spawn(browser),
         desc="Launch browser"
+        ),
+    Key([mod], "m",
+        lazy.spawn(mail_client),
+        desc="Launch mail client"
         ),
     Key([mod], "c",
         lazy.spawn(code_editor),
