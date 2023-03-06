@@ -20,6 +20,7 @@ mail_client = "thunderbird"
 code_editor = "codium"
 note_app = "obsidian"
 crypto_app = "veracrypt"
+emoji_app = "emoji-keyboard"
 
 
 
@@ -162,9 +163,13 @@ Key([mod, shift], "Tab",
         lazy.spawn(note_app),
         desc="Launch Obsidian"
         ),
-     Key([mod], "v",
+    Key([mod], "v",
         lazy.spawn(crypto_app),
         desc="Launch VeraCrypt"
+        ),
+    Key([mod], "e",
+        lazy.spawn(emoji_app),
+        desc="Launch Emoji keyboard"
         ),
     Key([mod, shift], "Return",
         lazy.spawn("rofi -show drun "),
