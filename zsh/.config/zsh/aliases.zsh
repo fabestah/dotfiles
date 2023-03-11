@@ -9,6 +9,9 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+# Pacman (package management)
+alias update-mirrors='rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist'
+
 # List every file colorized automatically
 alias ls='ls --color=auto'
 alias lsa='ls -a'
