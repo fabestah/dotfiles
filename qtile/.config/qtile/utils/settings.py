@@ -23,6 +23,7 @@ colors = [
     ["#F5E0DC", "#F5E0DC"],  # 20 rosewater
 ]
 
+
 # Workspaces with names
 # workspace_names = [
 #     " WEB",
@@ -33,6 +34,7 @@ colors = [
 #     " DIR",
 #     " NOT",
 # ]
+
 
 # Nerd Font icons without names
 # workspace_names = [
@@ -45,20 +47,34 @@ colors = [
 #     "",
 # ]
 
+
 # Without names
 workspace_names = [
     "",
     "",
     "",
-    "",
+    "", # Scroll
+    "", # Envelope
+    "",
     "",
-    "",
-    "",
+    "",
+    "",
 ]
+#  - File code
+#  - Game controller
+#  - Lightning bolt
+#  - Speech bubble
+#  - Pen in window
+#  - Note
+#  - Pencil
+#  - Pen
+#  - Paperclip
+
 
 # General
 wallpaper_main = "~/pictures/wallpapers/floating_astronaut.png"
 wallpaper_sec = "~/pictures/wallpapers/floating_astronaut.png"
+
 
 # Hardware
 network = "ens33"  # network interface name
