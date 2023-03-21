@@ -6,10 +6,11 @@ variables = {
     'bar': 'decorated',
     'colorscheme': 'catppuccin',
     'terminal': 'kitty',
-    'wallpaper_main': '~/Pictures/Wallpapers/floating_astronaut.png',
+    'wallpaper_main': '~/pictures/wallpapers/floating_astronaut.png',
+    'wallpaper_sec': '~/pictures/wallpapers/floating_astronaut.png',
     'with_battery': False,
     'with_wlan': False,
-    'two_monitors': False,
+    'two_monitors': True,
 }
 
 try:

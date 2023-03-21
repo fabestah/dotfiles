@@ -1,0 +1,10 @@
+{
+  "bar": "decorated",
+  "colorscheme": "catppuccin",
+  "terminal": "kitty",
+  "wallpaper_main": "~/pictures/wallpapers/floating_astronaut.png",
+  "wallpaper_sec": "~/pictures/wallpapers/floating_astronaut.png",
+  "with_battery": false,
+  "with_wlan": false,
+  "two_monitors": true
+}

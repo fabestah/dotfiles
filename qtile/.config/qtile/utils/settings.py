@@ -57,11 +57,11 @@ workspace_names = [
 ]
 
 # General
-wallpaper_main = "~/Pictures/Wallpapers/floating_astronaut.png"
-# wallpaper_sec = "~/.config/qtile/wallpapers/hk1.jpg"
+wallpaper_main = "~/pictures/wallpapers/floating_astronaut.png"
+wallpaper_sec = "~/pictures/wallpapers/floating_astronaut.png"
 
 # Hardware
 network = "ens33"  # network interface name
-two_monitors = False # number of screens in the system
+two_monitors = True # number of screens in the system
 with_battery = False # whether the system uses a battery or not
 with_wlan = False # whether the system uses wlan/internet or not
