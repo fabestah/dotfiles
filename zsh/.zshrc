@@ -20,7 +20,7 @@ plug "zap-zsh/zap-prompt"
 pfetch
 
 # History
-HISTFILE=~/.zsh_history
+HISTFILE=~/.config/zsh/.zsh_history
 
 # Keybinds
 bindkey -v

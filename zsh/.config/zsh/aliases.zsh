@@ -1,8 +1,9 @@
 #!/bin/sh
 # Configs quick access
-alias nvimrc='lvim ~/.config/nvim/'
-alias lvimrc='lvim ~/.config/lvim/config.lua'
-alias qtilecfg='cd ~/Projects/dotfiles/qtile/.config/qtile/'
+alias .nvim='lvim ~/.config/nvim/'
+alias .qtile='cd ~/.config/qtile/'
+alias qkeys= 'code /home/fabestah/.config/qtile/core/keys'
+alias /lvim='lvim ~/.config/lvim/config.lua'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -12,14 +13,17 @@ alias fgrep='fgrep --color=auto'
 # Pacman (package management)
 alias update-mirrors='rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist'
 
-# List every file colorized automatically
-alias ls='ls --color=auto'
-alias lsa='ls -a'
+# Customized listing
+alias la='LC_COLLATE=C ls -vAF'
+alias lla='LC_COLLATE=C ls -lqvAF'
 
 # Confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
+
+# Get size
+alias getsize="sudo du -hc --max-depth=0"
 
 # Git (lazygit)
 alias lg='lazygit'
