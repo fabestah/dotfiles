@@ -13,6 +13,7 @@ from utils.lazy_functions import (
 
 mod = "mod1" # mod1 = Alt | mod4 = Super
 shift = "shift"
+ctrl = "control"
 
 terminal = "kitty"
 browser = "librewolf"
@@ -20,6 +21,7 @@ mail_client = "thunderbird"
 code_editor = "codium"
 note_app = "obsidian"
 crypto_app = "veracrypt"
+screenshot_app = "flameshot gui"
 emoji_app = "emoji-keyboard"
 
 
@@ -170,6 +172,10 @@ Key([mod, shift], "Tab",
     Key([mod], "e",
         lazy.spawn(emoji_app),
         desc="Launch Emoji keyboard"
+        ),
+    Key([ctrl, shift], "s",
+        lazy.spawn(screenshot_app),
+        desc="Launch flameshot"
         ),
     Key([mod, shift], "Return",
         lazy.spawn("rofi -show drun "),
