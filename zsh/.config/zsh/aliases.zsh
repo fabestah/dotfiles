@@ -15,7 +15,7 @@ alias update-mirrors='rate-mirrors --allow-root --protocol https arch | sudo tee
 
 # Customized listing
 alias la='LC_COLLATE=C ls -vAF'
-alias lla='LC_COLLATE=C ls -lqvAF'
+alias lla='LC_COLLATE=C ls -lqvhAF'
 
 # Confirm before overwriting something
 alias cp="cp -i"
@@ -24,6 +24,7 @@ alias rm='rm -i'
 
 # Get size
 alias getsize="sudo du -hc --max-depth=0"
+alias getfs="df -PTh"
 
 # Git (lazygit)
 alias lg='lazygit'
