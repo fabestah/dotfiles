@@ -1,4 +1,8 @@
 #!/bin/sh
+
+
+### Simple aliases
+
 # Configs quick access
 alias .nvim='lvim ~/.config/nvim/'
 alias .qtile='cd ~/.config/qtile/'
@@ -26,6 +30,9 @@ alias rm='rm -i'
 alias getsize="sudo du -hc --max-depth=0"
 alias getfs="df -PTh"
 
+# Hollywood hacking
+alias hollywood="hacking"
+
 # Git (lazygit)
 alias lg='lazygit'
 
@@ -33,7 +40,7 @@ alias lg='lazygit'
 alias lv='lvim'
 
 # Codium
-alias codium='code'
+alias code='vscodium'
 
 # System controls
 alias reboot='sudo reboot'
@@ -44,3 +51,12 @@ alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate ar
 
 # systemd
 alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
+
+
+### Suffix Aliases
+
+# Open file type with a particular program (just by typing the filename like test.md)
+alias -s {md,ts,js,html,css}=vscodium
+
+### Functions
+
