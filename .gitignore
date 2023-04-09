@@ -1,4 +1,4 @@
 *.mypy_cache
 *.pyc
-
+.zsh_history
 state.yml
