@@ -4,10 +4,8 @@
 ### Simple aliases
 
 # Configs quick access
-alias .nvim='lvim ~/.config/nvim/'
-alias .qtile='cd ~/.config/qtile/'
-alias qkeys= 'code /home/fabestah/.config/qtile/core/keys'
-alias /lvim='lvim ~/.config/lvim/config.lua'
+alias .zsh="$EDITOR $HOME/.zshrc"
+alias sc="source $HOME/.zshrc"
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -56,7 +54,8 @@ alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
 ### Suffix Aliases
 
 # Open file type with a particular program (just by typing the filename like test.md)
-alias -s {md,ts,js,html,css}=vscodium
+alias -s {py,rs,ts,js,html,css}=vscodium
+alias -s md=glow
 
 ### Functions
 
