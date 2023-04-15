@@ -1,7 +1,6 @@
-from qtile_extras import widget    # type: ignore
+from qtile_extras import widget  # type: ignore
 from core.widgets import *
 from utils import color, config
-
 
 
 extra_bar = config["two_monitors"]
@@ -14,7 +13,6 @@ widget_defaults = dict(
 )
 
 extension_defaults = widget_defaults.copy()
-
 
 
 def create_bar(extra_bar=False):
@@ -45,7 +43,6 @@ def create_bar(extra_bar=False):
         border_width=[0, 0, 0, 0],
         border_color=color["fg"],
     )
-
 
 
 main_screen_bar = create_bar()

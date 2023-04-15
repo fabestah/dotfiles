@@ -8,7 +8,7 @@ from core.bar import main_screen_bar, secondary_screen_bar
 
 screens = [
     Screen(
-        wallpaper=config['wallpaper_main'],
+        wallpaper=config["wallpaper_main"],
         wallpaper_mode="fill",
         top=main_screen_bar,
         bottom=bar.Gap(2),
@@ -26,7 +26,9 @@ def get_num_monitors():
         resources = screen.root.xrandr_get_screen_resources()
 
         for output in resources.outputs:
-            monitor = display.xrandr_get_output_info(output, resources.config_timestamp)
+            monitor = display.xrandr_get_output_info(
+                output, resources.config_timestamp
+            )
             preferred = False
             if hasattr(monitor, "preferred"):
                 preferred = monitor.preferred
@@ -44,7 +46,7 @@ def get_num_monitors():
 if get_num_monitors() > 1:
     screens.append(
         Screen(
-            wallpaper=config['wallpaper_sec'],
+            wallpaper=config["wallpaper_sec"],
             wallpaper_mode="fill",
             top=secondary_screen_bar,
             bottom=bar.Gap(2),

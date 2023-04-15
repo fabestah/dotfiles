@@ -53,8 +53,8 @@ workspace_names = [
     "",
     "",
     "",
-    "", # Scroll
-    "", # Envelope
+    "",  # Scroll
+    "",  # Envelope
     "",
     "",
     "",
@@ -78,6 +78,6 @@ wallpaper_sec = "~/pictures/wallpapers/floating_astronaut.png"
 
 # Hardware
 network = "ens33"  # network interface name
-two_monitors = True # number of screens in the system
-with_battery = False # whether the system uses a battery or not
-with_wlan = False # whether the system uses wlan/internet or not
+two_monitors = True  # number of screens in the system
+with_battery = False  # whether the system uses a battery or not
+with_wlan = False  # whether the system uses wlan/internet or not

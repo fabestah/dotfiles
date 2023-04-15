@@ -8,12 +8,12 @@ from core.screens import screens
 from core import hooks
 
 __all__ = [
-        "floating_layout",
-        "groups",
-        "hooks",
-        "keys",
-        "layouts",
-        "mouse",
-        "screens",
-        "widget_defaults",
+    "floating_layout",
+    "groups",
+    "hooks",
+    "keys",
+    "layouts",
+    "mouse",
+    "screens",
+    "widget_defaults",
 ]
