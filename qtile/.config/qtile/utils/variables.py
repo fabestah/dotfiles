@@ -1,17 +1,69 @@
 import json
 from utils import dir
 
+
 directory = f"{dir.get()}/settings.json"
-default_settings = {
-    "bar": "decorated",
-    "colorscheme": "catppuccin",
-    "terminal": "kitty",
-    "wallpaper_main": "~/pictures/wallpapers/floating_astronaut.png",
-    "wallpaper_sec": "~/pictures/wallpapers/floating_astronaut.png",
-    "with_battery": False,
-    "with_wlan": False,
-    "two_monitors": True,
-}
+
+default_settings = [
+    {
+        "general": {
+            "two_monitors": True,
+            "with_wlan": False,
+            "with_battery": False,
+            "network": "ens33",
+        },
+        "applications": {
+            "terminal": "kitty",
+            "editor": "vscodium",
+            "browser": "librewolf",
+            "mail_client": "thunderbird",
+            "note_app": "obsidian",
+            "screenshot_app": "flameshot gui",
+        },
+        "theme": {
+            "bar": "decorated",
+            "colorscheme": "catppuccin",
+            "colors": {
+                "color_1": "#DDB6F2",  # mauve
+                "color_2": "#F5C2E7",  # pink
+                "color_3": "#E8A2AF",  # maroon
+                "color_4": "#F28FAD",  # red
+                "color_5": "#F8BD96",  # peach
+                "color_6": "#FAE3B0",  # yellow
+                "color_7": "#ABE9B3",  # green
+                "color_8": "#B5E8E0",  # teal
+                "color_9": "#96CDFB",  # blue
+                "color_10": "#89DCEB",  # sky
+                "color_11": "#161320",  # black 0
+                "color_12": "#1A1826",  # black 1
+                "color_13": "#1E1E2E",  # black 2
+                "color_14": "#302D41",  # black 3
+                "color_15": "#575268",  # black 4
+                "color_16": "#6E6C7E",  # gray 0
+                "color_17": "#988BA2",  # gray 1
+                "color_18": "#C3BAC6",  # gray 2
+                "color_19": "#D9E0EE",  # white
+                "color_20": "#C9CBFF",  # lavender
+                "color_21": "#F5E0DC",  # rosewater
+            },
+            "wallpapers": {
+                "wallpaper_main": "~/pictures/wallpapers/floating_astronaut.png",
+                "wallpaper_sec": "~/pictures/wallpapers/floating_astronaut.png",
+            },
+            "workspace_names": {
+                "workspace_1": "",
+                "workspace_2": "",
+                "workspace_3": "",
+                "workspace_4": "",
+                "workspace_5": "",
+                "workspace_6": "",
+                "workspace_7": "",
+                "workspace_8": "",
+                "workspace_9": "",
+            },
+        },
+    }
+]
 
 try:
     with open(directory, "r") as file:
@@ -26,85 +78,70 @@ except FileNotFoundError:
 # To-Do: config in settings ändern, alles weiter unten in settings.json einbauen, neue testing functionality implementieren
 
 # Catppuccin colors
-colors = [
-    ["#DDB6F2", "#DDB6F2"],  #  0 mauve
-    ["#F5C2E7", "#F5C2E7"],  #  1 pink
-    ["#E8A2AF", "#E8A2AF"],  #  2 maroon
-    ["#F28FAD", "#F28FAD"],  #  3 red
-    ["#F8BD96", "#F8BD96"],  #  4 peach
-    ["#FAE3B0", "#FAE3B0"],  #  5 yellow
-    ["#ABE9B3", "#ABE9B3"],  #  6 green
-    ["#B5E8E0", "#B5E8E0"],  #  7 teal
-    ["#96CDFB", "#96CDFB"],  #  8 blue
-    ["#89DCEB", "#89DCEB"],  #  9 sky
-    ["#161320", "#161320"],  # 10 black 0
-    ["#1A1826", "#1A1826"],  # 11 black 1
-    ["#1E1E2E", "#1E1E2E"],  # 12 black 2
-    ["#302D41", "#302D41"],  # 13 black 3
-    ["#575268", "#575268"],  # 14 black 4
-    ["#6E6C7E", "#6E6C7E"],  # 15 gray 0
-    ["#988BA2", "#988BA2"],  # 16 gray 1
-    ["#C3BAC6", "#C3BAC6"],  # 17 gray 2
-    ["#D9E0EE", "#D9E0EE"],  # 18 white
-    ["#C9CBFF", "#C9CBFF"],  # 19 lavender
-    ["#F5E0DC", "#F5E0DC"],  # 20 rosewater
-]
+# "color_1": "#DDB6F2",  # mauve
+# "color_2": "#F5C2E7",  # pink
+# "color_3": "#E8A2AF",  # maroon
+# "color_4": "#F28FAD",  # red
+# "color_5": "#F8BD96",  # peach
+# "color_6": "#FAE3B0",  # yellow
+# "color_7": "#ABE9B3",  # green
+# "color_8": "#B5E8E0",  # teal
+# "color_9": "#96CDFB",  # blue
+# "color_10": "#89DCEB",  # sky
+# "color_11": "#161320",  # black 0
+# "color_12": "#1A1826",  # black 1
+# "color_13": "#1E1E2E",  # black 2
+# "color_14": "#302D41",  # black 3
+# "color_15": "#575268",  # black 4
+# "color_16": "#6E6C7E",  # gray 0
+# "color_17": "#988BA2",  # gray 1
+# "color_18": "#C3BAC6",  # gray 2
+# "color_19": "#D9E0EE",  # white
+# "color_20": "#C9CBFF",  # lavender
+# "color_21": "#F5E0DC",  # rosewater
 
 
 # Workspaces with names
-# workspace_names = [
-#     " WEB",
-#     " DEV",
-#     " SYS",
-#     " DISC",
-#     " MUS",
-#     " DIR",
-#     " NOT",
-# ]
+# "workspace_1": " WEB",
+# "workspace_2": " DEV",
+# "workspace_3": " SYS",
+# "workspace_4": " DOC",
+# "workspace_5": " MAIL",
+# "workspace_6": " YT",
+# "workspace_7": " MUS",
+# "workspace_8": " GAME",
+# "workspace_9": " TS",
+
+# Workspaces without names
+# "workspace_1": "",
+# "workspace_2": "",
+# "workspace_3": "",
+# "workspace_4": "",
+# "workspace_5": "",
+# "workspace_6": "",
+# "workspace_7": "",
+# "workspace_8": "",
+# "workspace_9": "",
 
 
-# Nerd Font icons without names
-# workspace_names = [
-#     "",
-#     "",
-#     "",
-#     "ﭮ",
-#     "",
-#     "",
-#     "",
-# ]
+# Font Awesome icons
+#  - code file
+#  - directory
+#  - game controller
+#  - lightning bolt
+#  - speech bubble
+#  - pen in window
+#  - note
+#  - pencil
+#  - pen
+#  - paperclip
+#  - discord
 
-
-# Without names
-workspace_names = [
-    "",
-    "",
-    "",
-    "",  # Scroll
-    "",  # Envelope
-    "",
-    "",
-    "",
-    "",
-]
-#  - File code
-#  - Game controller
-#  - Lightning bolt
-#  - Speech bubble
-#  - Pen in window
-#  - Note
-#  - Pencil
-#  - Pen
-#  - Paperclip
-
-
-# General
-wallpaper_main = "~/pictures/wallpapers/floating_astronaut.png"
-wallpaper_sec = "~/pictures/wallpapers/floating_astronaut.png"
-
-
-# Hardware
-network = "ens33"  # network interface name
-two_monitors = True  # number of screens in the system
-with_battery = False  # whether the system uses a battery or not
-with_wlan = False  # whether the system uses wlan/internet or not
+# Nerd Font icons
+#  - firefox
+#  - dev
+#  - sys
+# ﭮ - discord
+#  - spotify
+#  - directory
+#  - note
