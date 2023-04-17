@@ -67,12 +67,12 @@ default_settings = [
 
 try:
     with open(directory, "r") as file:
-        config = json.load(file)
+        settings = json.load(file)
         file.close()
 except FileNotFoundError:
     with open(directory, "w") as file:
         file.write(json.dumps(default_settings, indent=2))
-        config = default_settings.copy()
+        settings = default_settings.copy()
         file.close()
 
 # To-Do: config in settings ändern, alles weiter unten in settings.json einbauen, neue testing functionality implementieren

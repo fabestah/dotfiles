@@ -2,13 +2,13 @@ from libqtile import bar
 from libqtile.config import Screen
 from Xlib import display as xdisplay
 
-from utils import config
+from utils import settings
 from core.bar import main_screen_bar, secondary_screen_bar
 
 
 screens = [
     Screen(
-        wallpaper=config["wallpaper_main"],
+        wallpaper=settings["wallpaper_main"],
         wallpaper_mode="fill",
         top=main_screen_bar,
         bottom=bar.Gap(2),
@@ -46,7 +46,7 @@ def get_num_monitors():
 if get_num_monitors() > 1:
     screens.append(
         Screen(
-            wallpaper=config["wallpaper_sec"],
+            wallpaper=settings["wallpaper_sec"],
             wallpaper_mode="fill",
             top=secondary_screen_bar,
             bottom=bar.Gap(2),

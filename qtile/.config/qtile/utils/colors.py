@@ -1,10 +1,10 @@
 import json
 
 from utils import dir
-from utils.variables import config
+from utils.variables import settings
 
 colorscheme = {"catppuccin": "catppuccin.json"}.get(
-    config["colorscheme"], "catppuccin.json"
+    settings["colorscheme"], "catppuccin.json"
 )
 
 path = f"{dir.get()}/utils/colorscheme/{colorscheme}"
