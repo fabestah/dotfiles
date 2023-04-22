@@ -149,6 +149,25 @@ keys = [
         lazy.window.toggle_maximize(),
         desc="Toggle window between minimum and maximum size",
     ),
+    ### Media keys
+    Key(
+        [],
+        "XF86AudioMute",
+        lazy.spawn("amixer -D pulse sset Master toggle"),
+        desc="Mute/unmute sound volume",
+    ),
+    Key(
+        [],
+        "XF86AudioLowerVolume",
+        lazy.spawn("amixer -D pulse sset Master 1%-"),
+        desc="Lower sound volume",
+    ),
+    Key(
+        [],
+        "XF86AudioRaiseVolume",
+        lazy.spawn("amixer -D pulse sset Master 1%+"),
+        desc="Raise sound volume",
+    ),
     ### Programs
     Key(
         [mod],
