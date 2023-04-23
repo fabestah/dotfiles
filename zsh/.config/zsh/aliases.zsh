@@ -20,9 +20,9 @@ alias la='LC_COLLATE=C ls -vAF'
 alias lla='LC_COLLATE=C ls -lqvhAF'
 
 # Confirm before overwriting something
-alias cp="cp -i"
-alias mv='mv -i'
-alias rm='rm -i'
+alias cp="cp -iv"
+alias mv='mv -iv'
+alias rm='rm -iv'
 
 # Get size
 alias getsize="sudo du -hc --max-depth=0"
