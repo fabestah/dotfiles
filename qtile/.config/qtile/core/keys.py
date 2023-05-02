@@ -21,7 +21,7 @@ code_editor = "codium"
 note_app = "obsidian"
 crypto_app = "veracrypt"
 screenshot_app = "flameshot gui"
-emoji_app = "emoji-keyboard"
+emoji_app = "emoji-picker"
 
 
 keys = [
@@ -199,18 +199,12 @@ keys = [
     Key([mod], "c", lazy.spawn(code_editor), desc="Launch VSCodium"),
     Key([mod], "o", lazy.spawn(note_app), desc="Launch Obsidian"),
     Key([mod], "v", lazy.spawn(crypto_app), desc="Launch VeraCrypt"),
-    Key([mod], "e", lazy.spawn(emoji_app), desc="Launch Emoji keyboard"),
+    Key([mod], "e", lazy.spawn(emoji_app), desc="Launch emoji-picker"),
     Key(
         [ctrl, shift], "s", lazy.spawn(screenshot_app), desc="Launch flameshot"
     ),
     Key(
         [mod, shift], "Return", lazy.spawn("rofi -show drun "), desc="Run Rofi"
-    ),
-    Key(
-        [mod, shift],
-        "e",
-        lazy.spawn("rofi -show emoji"),
-        desc="Run Rofi emoji plugin",
     ),
     Key(
         [mod],
