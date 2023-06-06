@@ -91,9 +91,18 @@ class Variables:
     def __init__(self):
         pass
 
+    def __getattr__(self, name):
+        value = self.settings.get(name)
+        if isinstance(value, dict):
+            sub_instance = Variables()
+            sub_instance.settings = value
+            return sub_instance
+
+    def __getitem__(self, name):
+        return self.settings[name]
+
 
 var = Variables()
-
 
 # Catppuccin colors
 # "color_1": "#DDB6F2",  # mauve
