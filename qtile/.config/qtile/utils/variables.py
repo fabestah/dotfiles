@@ -101,6 +101,9 @@ class Variables:
     def __getitem__(self, name):
         return self.settings[name]
 
+    def __repr__(self):
+        return str(self.settings)
+
 
 var = Variables()
 
