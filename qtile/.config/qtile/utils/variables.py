@@ -75,7 +75,25 @@ except FileNotFoundError:
         settings = default_settings.copy()
         file.close()
 
-# To-Do: config in settings ändern, alles weiter unten in settings.json einbauen, neue testing functionality implementieren
+
+def load_settings(cls):
+    def wrap():
+        instance = cls()
+        with open(directory) as f:
+            instance.settings = dict(json.load(f)[0])
+            return instance
+
+    return wrap
+
+
+@load_settings
+class Variables:
+    def __init__(self):
+        pass
+
+
+var = Variables()
+
 
 # Catppuccin colors
 # "color_1": "#DDB6F2",  # mauve
