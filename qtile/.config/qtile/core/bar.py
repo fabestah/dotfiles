@@ -1,9 +1,9 @@
 from qtile_extras import widget  # type: ignore
 from core.widgets import *
-from utils import color, settings
+from utils import color, var
 
 
-extra_bar = settings["two_monitors"]
+extra_bar = var.general["two_monitors"]
 
 widget_defaults = dict(
     font="Hack Nerd Font",
