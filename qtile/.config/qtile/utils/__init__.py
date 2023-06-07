@@ -1,9 +1,9 @@
 from utils.colors import color
-from utils.variables import settings
+from utils.variables import var
 from utils import dir
 
 __all__ = [
     "color",
-    "settings",
+    "var",
     "dir",
 ]
