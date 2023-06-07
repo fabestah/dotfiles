@@ -5,7 +5,7 @@ from qtile_extras.widget import decorations  # type: ignore
 from qtile_extras.widget.decorations import RectDecoration  # type: ignore
 
 from utils.variables import workspace_names
-from utils import color, settings
+from utils import color, var
 
 import os
 
@@ -273,7 +273,7 @@ w_battery = (
         ),
         separator(),
     )
-    if settings["with_battery"]
+    if var.general["with_battery"]
     else ()
 )
 
@@ -329,7 +329,7 @@ w_wlan = (
         ),
         separator(),
     )
-    if settings["with_wlan"]
+    if var.general["with_wlan"]
     else ()
 )
 
