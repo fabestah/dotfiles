@@ -2,46 +2,62 @@ from libqtile.config import Group, Key, Match, ScratchPad, DropDown
 from libqtile.lazy import lazy
 
 from core.keys import keys, mod, shift
-from utils.variables import workspace_names
+from utils.variables import var, workspace_names
 
 
 workspaces = [
     {
-        "name": workspace_names[0],
+        "name": var.theme.workspace_names["workspace_0"],
         "key": "1",
         "matches": [Match(wm_class="firefox"), Match(wm_class="librewolf")],
         "lay": "monadtall",
         "init": True,
     },
     {
-        "name": workspace_names[1],
+        "name": var.theme.workspace_names["workspace_1"],
         "key": "2",
         "matches": [Match(wm_class="code-oss")],
         "lay": "monadtall",
     },
-    {"name": workspace_names[2], "key": "3", "lay": "monadtall"},
     {
-        "name": workspace_names[3],
+        "name": var.theme.workspace_names["workspace_2"],
+        "key": "3",
+        "lay": "monadtall",
+    },
+    {
+        "name": var.theme.workspace_names["workspace_3"],
         "key": "4",
         "matches": [Match(wm_class="discord")],
         "lay": "monadtall",
     },
     {
-        "name": workspace_names[4],
+        "name": var.theme.workspace_names["workspace_4"],
         "key": "5",
         "matches": [Match(wm_class="Spotify")],
         "lay": "monadtall",
         "init": True,
     },
-    {"name": workspace_names[5], "key": "6", "lay": "monadtall"},
     {
-        "name": workspace_names[6],
+        "name": var.theme.workspace_names["workspace_5"],
+        "key": "6",
+        "lay": "monadtall",
+    },
+    {
+        "name": var.theme.workspace_names["workspace_6"],
         "key": "7",
         "matches": [Match(wm_class="cypress")],
         "lay": "monadtall",
     },
-    {"name": workspace_names[7], "key": "8", "lay": "monadtall"},
-    {"name": workspace_names[8], "key": "9", "lay": "monadtall"},
+    {
+        "name": var.theme.workspace_names["workspace_7"],
+        "key": "8",
+        "lay": "monadtall",
+    },
+    {
+        "name": var.theme.workspace_names["workspace_8"],
+        "key": "9",
+        "lay": "monadtall",
+    },
 ]
 
 
