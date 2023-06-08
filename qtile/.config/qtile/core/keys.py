@@ -1,6 +1,7 @@
 from libqtile.config import Key, KeyChord
 from libqtile.lazy import lazy
 
+from utils import var
 from utils.lazy_functions import (
     move_window_to_next_screen,
     move_window_to_prev_screen,

@@ -2,7 +2,7 @@ from libqtile.config import Group, Key, Match, ScratchPad, DropDown
 from libqtile.lazy import lazy
 
 from core.keys import keys, mod, shift
-from utils.variables import var, workspace_names
+from utils import var
 
 
 workspaces = [
