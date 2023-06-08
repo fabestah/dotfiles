@@ -104,6 +104,9 @@ class Variables:
     def __repr__(self):
         return str(self.settings)
 
+    def get(self, key, default=None):
+        return self.settings.get(key, default)
+
 
 var = Variables()
 
