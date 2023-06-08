@@ -4,9 +4,7 @@ from utils import dir
 from utils.variables import var
 
 
-colorscheme = var.settings.get("theme", {}).get(
-    "colorscheme", "catppuccin.json"
-)
+colorscheme = var.theme.get("colorscheme", "catppuccin.json")
 
 path = f"{dir.get()}/utils/colorscheme/{colorscheme}"
 
