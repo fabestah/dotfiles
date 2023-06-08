@@ -1,10 +1,11 @@
 [
      {
           "general": {
+               "mod": "mod1",
+               "network": "ens33",
                "two_monitors": true,
-               "with_wlan": false,
                "with_battery": false,
-               "network": "ens33"
+               "with_wlan": false
           },
           "applications": {
                "terminal": "kitty",
