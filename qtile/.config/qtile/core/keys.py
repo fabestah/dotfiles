@@ -11,23 +11,12 @@ from utils.lazy_functions import (
 )
 
 
-mod = "mod1"  # mod1 = Alt | mod4 = Super
-shift = "shift"
-ctrl = "control"
-
-terminal = "kitty"
-browser = "librewolf"
-mail_client = "thunderbird"
-code_editor = "codium"
-note_app = "obsidian"
-crypto_app = "veracrypt"
-screenshot_app = "flameshot gui"
-emoji_app = "emoji-picker"
+mod = var.general["mod"]  # mod1 = Alt | mod4 = Super
 
 
 keys = [
     ### General
-    Key([mod, shift], "c", lazy.window.kill(), desc="Kill active window"),
+    Key([mod, "shift"], "c", lazy.window.kill(), desc="Kill active window"),
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     ### Move focus
@@ -57,45 +46,48 @@ keys = [
     ),
     ### Adjust window size
     Key(
-        [mod, shift],
+        [mod, "shift"],
         "h",
         lazy.layout.shrink(),
         lazy.layout.decrease_nmaster(),
         desc="Shrink window (MonadTall), decrease number in master pane (Tile)",
     ),
     Key(
-        [mod, shift],
+        [mod, "shift"],
         "l",
         lazy.layout.grow(),
         lazy.layout.increase_nmaster(),
         desc="Expand window (MonadTall), increase number in master pane (Tile)",
     ),
     Key(
-        [mod, shift], "r", lazy.layout.reset(), desc="Reset window size ratios"
+        [mod, "shift"],
+        "r",
+        lazy.layout.reset(),
+        desc="Reset window size ratios",
     ),
     Key(
-        [mod, shift],
+        [mod, "shift"],
         "m",
         lazy.layout.maximize(),
         desc="Toggle window between minimum and maximum sizes",
     ),
     ### Move windows
     Key(
-        [mod, shift],
+        [mod, "shift"],
         "j",
         lazy.layout.shuffle_down(),
         lazy.layout.section_down(),
         desc="Move window down in current stack",
     ),
     Key(
-        [mod, shift],
+        [mod, "shift"],
         "k",
         lazy.layout.shuffle_up(),
         lazy.layout.section_up(),
         desc="Move window up in current stack",
     ),
     Key(
-        [mod, shift],
+        [mod, "shift"],
         "Tab",
         lazy.layout.rotate(),
         lazy.layout.flip(),
@@ -124,20 +116,20 @@ keys = [
         [mod], "Tab", lazy.next_layout(), desc="Toggle through layouts forward"
     ),
     Key(
-        [mod, shift],
+        [mod, "shift"],
         "Tab",
         lazy.prev_layout(),
         desc="Toggle through layouts backwards",
     ),
     Key(
-        [mod, shift],
+        [mod, "shift"],
         "f",
         lazy.window.toggle_floating(),
         desc="Toggle floating",
     ),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     Key(
-        [mod, shift],
+        [mod, "shift"],
         "space",
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
@@ -194,27 +186,62 @@ keys = [
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget",
     ),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
-    Key([mod], "m", lazy.spawn(mail_client), desc="Launch mail client"),
-    Key([mod], "c", lazy.spawn(code_editor), desc="Launch VSCodium"),
-    Key([mod], "o", lazy.spawn(note_app), desc="Launch Obsidian"),
-    Key([mod], "v", lazy.spawn(crypto_app), desc="Launch VeraCrypt"),
-    Key([mod], "e", lazy.spawn(emoji_app), desc="Launch emoji-picker"),
     Key(
-        [ctrl, shift], "s", lazy.spawn(screenshot_app), desc="Launch flameshot"
+        [mod],
+        "Return",
+        lazy.spawn(var.applications["terminal"]),
+        desc="Launch a terminal",
     ),
     Key(
-        [mod, shift], "Return", lazy.spawn("rofi -show drun "), desc="Run Rofi"
+        [mod],
+        "b",
+        lazy.spawn(var.applications["browser"]),
+        desc="Launch browser",
+    ),
+    Key(
+        [mod, "shift"],
+        "Return",
+        lazy.spawn(var.applications["app_launcher"]),
+        desc="Lunch application launcher",
+    ),
+    Key(
+        [mod],
+        "m",
+        lazy.spawn(var.applications["mail_client"]),
+        desc="Launch mail client",
+    ),
+    Key(
+        [mod],
+        "c",
+        lazy.spawn(var.applications["editor"]),
+        desc="Launch code editor",
+    ),
+    Key(
+        [mod],
+        "o",
+        lazy.spawn(var.applications["note_app"]),
+        desc="Launch note taking application",
+    ),
+    Key(
+        ["control", "shift"],
+        "s",
+        lazy.spawn(var.applications["screenshot_app"]),
+        desc="Launch screenshot tool",
+    ),
+    Key(
+        [mod],
+        "e",
+        lazy.spawn("emoji-picker"),
+        desc="Launch emoji picking tool",
     ),
     Key(
         [mod],
         "t",
         lazy.group["scratchpad"].dropdown_toggle("term"),
-        desc="Toggle drop-down Kitty terminal",
+        desc="Toggle drop-down terminal",
     ),
     Key(
-        [mod, shift],
+        [mod, "shift"],
         "t",
         lazy.group["scratchpad"].dropdown_toggle("btop-term"),
         desc="Toggle drop-down btop ressource monitor",
