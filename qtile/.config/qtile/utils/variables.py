@@ -65,16 +65,6 @@ default_settings = [
     }
 ]
 
-try:
-    with open(directory, "r") as file:
-        settings = json.load(file)
-        file.close()
-except FileNotFoundError:
-    with open(directory, "w") as file:
-        file.write(json.dumps(default_settings, indent=2))
-        settings = default_settings.copy()
-        file.close()
-
 
 def load_settings(cls):
     def wrap():
