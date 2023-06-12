@@ -11,6 +11,7 @@
                "terminal": "kitty",
                "editor": "vscodium",
                "browser": "librewolf",
+               "app_launcher": "rofi -show drun",
                "mail_client":   "thunderbird",
                "note_app": "obsidian",
                "screenshot_app": "flameshot gui"
