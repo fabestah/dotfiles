@@ -7,59 +7,61 @@ directory = f"{dir.get()}/settings.json"
 default_settings = [
     {
         "general": {
-            "two_monitors": True,
-            "with_wlan": False,
-            "with_battery": False,
+            "mod": "mod1",
             "network": "ens33",
+            "two_monitors": True,
+            "with_battery": False,
+            "with_wlan": False,
         },
         "applications": {
             "terminal": "kitty",
             "editor": "vscodium",
             "browser": "librewolf",
+            "app_launcher": "rofi -show drun",
             "mail_client": "thunderbird",
             "note_app": "obsidian",
             "screenshot_app": "flameshot gui",
         },
         "theme": {
             "bar": "decorated",
-            "colorscheme": "catppuccin",
+            "colorscheme": "catppuccin.json",
             "colors": {
-                "color_1": "#DDB6F2",  # mauve
-                "color_2": "#F5C2E7",  # pink
-                "color_3": "#E8A2AF",  # maroon
-                "color_4": "#F28FAD",  # red
-                "color_5": "#F8BD96",  # peach
-                "color_6": "#FAE3B0",  # yellow
-                "color_7": "#ABE9B3",  # green
-                "color_8": "#B5E8E0",  # teal
-                "color_9": "#96CDFB",  # blue
-                "color_10": "#89DCEB",  # sky
-                "color_11": "#161320",  # black 0
-                "color_12": "#1A1826",  # black 1
-                "color_13": "#1E1E2E",  # black 2
-                "color_14": "#302D41",  # black 3
-                "color_15": "#575268",  # black 4
-                "color_16": "#6E6C7E",  # gray 0
-                "color_17": "#988BA2",  # gray 1
-                "color_18": "#C3BAC6",  # gray 2
-                "color_19": "#D9E0EE",  # white
-                "color_20": "#C9CBFF",  # lavender
-                "color_21": "#F5E0DC",  # rosewater
+                "color_1": "#DDB6F2",
+                "color_2": "#F5C2E7",
+                "color_3": "#E8A2AF",
+                "color_4": "#F28FAD",
+                "color_5": "#F8BD96",
+                "color_6": "#FAE3B0",
+                "color_7": "#ABE9B3",
+                "color_8": "#B5E8E0",
+                "color_9": "#96CDFB",
+                "color_10": "#89DCEB",
+                "color_11": "#161320",
+                "color_12": "#1A1826",
+                "color_13": "#1E1E2E",
+                "color_14": "#302D41",
+                "color_15": "#575268",
+                "color_16": "#6E6C7E",
+                "color_17": "#988BA2",
+                "color_18": "#C3BAC6",
+                "color_19": "#D9E0EE",
+                "color_20": "#C9CBFF",
+                "color_21": "#F5E0DC",
             },
             "wallpapers": {
                 "wallpaper_main": "~/pictures/wallpapers/floating_astronaut.png",
                 "wallpaper_sec": "~/pictures/wallpapers/floating_astronaut.png",
             },
             "workspace_names": {
-                "workspace_1": "",
-                "workspace_2": "",
-                "workspace_3": "",
-                "workspace_4": "",
-                "workspace_5": "",
-                "workspace_6": "",
-                "workspace_7": "",
-                "workspace_8": "",
-                "workspace_9": "",
+                "workspace_0": "\ue007",
+                "workspace_1": "\uf121",
+                "workspace_2": "\uf120",
+                "workspace_3": "\uf70e",
+                "workspace_4": "\uf0e0",
+                "workspace_5": "\uf167",
+                "workspace_6": "\uf1bc",
+                "workspace_7": "\uf412",
+                "workspace_8": "\uf4f9",
             },
         },
     }
