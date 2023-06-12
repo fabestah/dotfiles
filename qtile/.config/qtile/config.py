@@ -3,7 +3,6 @@ from core import (
     hooks,
     keys,
     mod,
-    shift,
     layouts,
     floating_layout,
     screens,

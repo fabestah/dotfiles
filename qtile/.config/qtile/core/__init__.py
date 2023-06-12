@@ -1,6 +1,6 @@
 from core.bar import widget_defaults
 from core.groups import groups
-from core.keys import keys, mod, shift
+from core.keys import keys, mod
 from core.mouse import mouse
 from core.layouts import layouts, floating_layout
 from core.screens import screens

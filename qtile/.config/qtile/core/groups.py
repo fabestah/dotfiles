@@ -1,7 +1,7 @@
 from libqtile.config import Group, Key, Match, ScratchPad, DropDown
 from libqtile.lazy import lazy
 
-from core.keys import keys, mod, shift
+from core.keys import keys, mod
 from utils import var
 
 
@@ -110,7 +110,7 @@ for workspace in workspaces:
     )
     keys.append(
         Key(
-            [mod, shift],
+            [mod, "shift"],
             workspace["key"],
             *(
                 lazy.window.togroup(workspace["name"]),
