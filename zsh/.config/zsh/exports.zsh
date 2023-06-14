@@ -2,7 +2,7 @@
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-export EDITOR="nvim"
+export EDITOR="codium"
 export TERMINAL="kitty"
 export BROWSER="brave"
 export PATH="$HOME/.local/bin":$PATH
