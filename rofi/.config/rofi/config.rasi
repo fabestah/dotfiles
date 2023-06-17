@@ -1,5 +1,5 @@
 configuration {
-	modes: "window,drun,run,ssh";
+	modes: "window,drun,run,ssh,calc";
 	font: "ttf-hack-nerd";
 /*	location: 0;*/
 /*	yoffset: 0;*/
