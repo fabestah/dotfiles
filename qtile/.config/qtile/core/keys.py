@@ -246,5 +246,11 @@ keys = [
         lazy.group["scratchpad"].dropdown_toggle("btop-term"),
         desc="Toggle drop-down btop ressource monitor",
     ),
+    Key(
+        [mod, "shift"],
+        "p",
+        lazy.spawn("rofi -show window"),
+        desc="Launch window switcher",
+    ),
     # To-Do: Screenshots, Audio, Brightness, Misc, KeyChords
 ]
