@@ -252,5 +252,11 @@ keys = [
         lazy.spawn("rofi -show window"),
         desc="Launch window switcher",
     ),
+    Key(
+        [mod, "control"],
+        "c",
+        lazy.spawn("rofi -show calc -no-show-match -no-sort"),
+        desc="Launch window switcher",
+    ),
     # To-Do: Screenshots, Audio, Brightness, Misc, KeyChords
 ]
