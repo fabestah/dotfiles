@@ -162,7 +162,7 @@ def gen_groupbox():
     return (
         widget.GroupBox(
             font="Font Awesome 6 Free Solid",
-            visible_groups=list(var.theme.get("workspace_names").values()),
+            visible_groups=var.get_workspace_names_list(),
             **group_box_settings,
         ),
     )
