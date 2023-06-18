@@ -85,6 +85,10 @@ class Variables:
     def get(self, key, default=None):
         return self.settings.get(key, default)
 
+    def get_workspace_names_list(self) -> list[str]:
+        workspace_names = self.theme.get("workspace_names").values()
+        return list(workspace_names)
+
 
 var = Variables()
 
