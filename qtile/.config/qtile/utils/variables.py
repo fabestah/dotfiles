@@ -7,7 +7,7 @@ T = TypeVar("T", bound="Variables")
 
 directory: str = f"{dir.get()}/settings.json"
 
-default_settings: list[dict[str, Any]] = {
+default_settings: dict[str, Any] = {
     "general": {
         "mod": "mod1",
         "network": "ens33",
@@ -55,9 +55,9 @@ def load_settings(cls: type[T]) -> Callable[[], T]:
     def read_settings_file() -> dict[str, Any]:
         try:
             with open(directory) as f:
-                return dict(json.load(f)[0])
+                return dict(json.load(f))
         except (json.JSONDecodeError, FileNotFoundError):
-            return default_settings[0]
+            return default_settings
 
     return wrap
 
