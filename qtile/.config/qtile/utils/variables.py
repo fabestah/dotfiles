@@ -7,45 +7,43 @@ T = TypeVar("T", bound="Variables")
 
 directory: str = f"{dir.get()}/settings.json"
 
-default_settings: list[dict[str, Any]] = [
-    {
-        "general": {
-            "mod": "mod1",
-            "network": "ens33",
-            "two_monitors": True,
-            "with_battery": False,
-            "with_wlan": False,
+default_settings: list[dict[str, Any]] = {
+    "general": {
+        "mod": "mod1",
+        "network": "ens33",
+        "two_monitors": True,
+        "with_battery": False,
+        "with_wlan": False,
+    },
+    "applications": {
+        "terminal": "kitty",
+        "editor": "vscodium",
+        "browser": "librewolf",
+        "app_launcher": "rofi -show drun",
+        "mail_client": "thunderbird",
+        "note_app": "obsidian",
+        "screenshot_app": "flameshot gui",
+    },
+    "theme": {
+        "bar": "decorated",
+        "colorscheme": "catppuccin.json",
+        "wallpapers": {
+            "wallpaper_main": "~/pictures/wallpapers/floating_astronaut.png",
+            "wallpaper_sec": "~/pictures/wallpapers/floating_astronaut.png",
         },
-        "applications": {
-            "terminal": "kitty",
-            "editor": "vscodium",
-            "browser": "librewolf",
-            "app_launcher": "rofi -show drun",
-            "mail_client": "thunderbird",
-            "note_app": "obsidian",
-            "screenshot_app": "flameshot gui",
+        "workspace_names": {
+            "workspace_0": "\ue007",
+            "workspace_1": "\uf121",
+            "workspace_2": "\uf120",
+            "workspace_3": "\uf70e",
+            "workspace_4": "\uf0e0",
+            "workspace_5": "\uf167",
+            "workspace_6": "\uf1bc",
+            "workspace_7": "\uf412",
+            "workspace_8": "\uf4f9",
         },
-        "theme": {
-            "bar": "decorated",
-            "colorscheme": "catppuccin.json",
-            "wallpapers": {
-                "wallpaper_main": "~/pictures/wallpapers/floating_astronaut.png",
-                "wallpaper_sec": "~/pictures/wallpapers/floating_astronaut.png",
-            },
-            "workspace_names": {
-                "workspace_0": "\ue007",
-                "workspace_1": "\uf121",
-                "workspace_2": "\uf120",
-                "workspace_3": "\uf70e",
-                "workspace_4": "\uf0e0",
-                "workspace_5": "\uf167",
-                "workspace_6": "\uf1bc",
-                "workspace_7": "\uf412",
-                "workspace_8": "\uf4f9",
-            },
-        },
-    }
-]
+    },
+}
 
 
 def load_settings(cls: type[T]) -> Callable[[], T]:
