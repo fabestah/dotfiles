@@ -1,6 +1,7 @@
 import json
 from utils import dir
 from typing import Any, Callable, TypeVar
+from libqtile.log_utils import logger
 
 
 T = TypeVar("T", bound="Variables")
@@ -57,7 +58,12 @@ def load_settings(cls: type[T]) -> Callable[[], T]:
             with open(directory) as f:
                 return dict(json.load(f))
         except (json.JSONDecodeError, FileNotFoundError):
-            return default_settings
+            return create_default_settings_file()
+
+    def create_default_settings_file() -> dict[str, Any]:
+        with open(directory, "w") as f:
+            json.dump(default_settings, f, indent=4)
+        return default_settings
 
     return wrap
 
