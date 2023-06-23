@@ -67,6 +67,7 @@ def load_settings(cls: type[T]) -> Callable[[], T]:
     def create_default_settings_file() -> dict[str, Any]:
         with open(directory, "w") as f:
             json.dump(default_settings, f, indent=4)
+        logger.info("Default settings.json created successfully")
         return default_settings
 
     return wrap
