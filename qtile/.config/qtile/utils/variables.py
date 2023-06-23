@@ -57,9 +57,11 @@ def load_settings(cls: type[T]) -> Callable[[], T]:
         try:
             with open(directory) as f:
                 return dict(json.load(f))
-        except json.JSONDecodeError:
+        except json.JSONDecodeError as e:
+            logger.exception(e)
             return default_settings
-        except FileNotFoundError:
+        except FileNotFoundError as e:
+            logger.exception(e)
             return create_default_settings_file()
 
     def create_default_settings_file() -> dict[str, Any]:
