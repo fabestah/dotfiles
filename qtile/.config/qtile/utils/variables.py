@@ -50,7 +50,7 @@ default_settings: dict[str, Any] = {
 def load_settings(cls: type[T]) -> Callable[[], T]:
     def wrap() -> T:
         instance: T = cls()
-        instance.settings = read_settings_file()
+        instance._settings = read_settings_file()
         return instance
 
     def read_settings_file() -> dict[str, Any]:
@@ -76,23 +76,23 @@ def load_settings(cls: type[T]) -> Callable[[], T]:
 @load_settings
 class Variables:
     def __init__(self):
-        self.settings: dict[str, Any]
+        self._settings: dict[str, Any]
 
     def __getattr__(self, name):
-        value = self.settings.get(name)
+        value = self._settings.get(name)
         if isinstance(value, dict):
             sub_instance = Variables()
-            sub_instance.settings = value
+            sub_instance._settings = value
             return sub_instance
 
     def __getitem__(self, name):
-        return self.settings[name]
+        return self._settings[name]
 
     def __repr__(self):
-        return str(self.settings)
+        return str(self._settings)
 
     def get(self, key, default=None):
-        return self.settings.get(key, default)
+        return self._settings.get(key, default)
 
     def get_workspace_names_list(self) -> list[str]:
         workspace_names = self.theme.get("workspace_names").values()
