@@ -21,8 +21,9 @@ alias lla='LC_COLLATE=C ls -lqvhAF'
 alias update-mirrors='rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist'
 
 # Get Stuff
-alias getsize="sudo du -hc --max-depth=0"
 alias getfs="df -PTh"
+alias getkeys='xev | awk -F"[ )]+" "/^KeyPress/ { a[NR+2] } NR in a { printf \"%-3s %s\n\", \$5, \$8 }"'
+alias getsize="sudo du -hc --max-depth=0"
 
 # System Controls
 alias reboot='sudo reboot'
