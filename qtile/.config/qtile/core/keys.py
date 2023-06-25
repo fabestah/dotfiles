@@ -2,13 +2,7 @@ from libqtile.config import Key, KeyChord
 from libqtile.lazy import lazy
 
 from utils import var
-from utils.lazy_functions import (
-    move_window_to_next_screen,
-    move_window_to_prev_screen,
-    move_focus_to_next_screen,
-    move_focus_to_prev_screen,
-    minimize_all_windows,
-)
+from utils.lazy_functions import Functions
 
 
 mod = var.general["mod"]  # mod1 = Alt | mod4 = Super
@@ -35,13 +29,13 @@ keys = [
     Key(
         [mod],
         "comma",
-        move_focus_to_next_screen,
+        Functions.move_focus_to_next_screen,
         desc="Move focus to next screen",
     ),
     Key(
         [mod],
         "period",
-        move_focus_to_prev_screen,
+        Functions.move_focus_to_prev_screen,
         desc="Move focus to previous screen",
     ),
     ### Adjust window size
@@ -96,19 +90,19 @@ keys = [
     Key(
         [mod, "shift"],
         "comma",
-        move_window_to_next_screen,
+        Functions.move_window_to_next_screen,
         desc="Move window to next screen",
     ),
     Key(
         [mod, "shift"],
         "period",
-        move_window_to_prev_screen,
+        Functions.move_window_to_prev_screen,
         desc="Move window to previous screen",
     ),
     Key(
         [mod, "shift"],
         "minus",
-        minimize_all_windows,
+        Functions.minimize_all_windows,
         desc="Minimize all windows in focused group",
     ),
     ### Toggles
