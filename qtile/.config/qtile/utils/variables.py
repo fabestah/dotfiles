@@ -49,8 +49,7 @@ default_settings: dict[str, Any] = {
 
 def load_settings(cls: type[T]) -> Callable[[], T]:
     def wrap() -> T:
-        instance: T = cls()
-        instance._settings = read_settings_file()
+        instance: T = cls(read_settings_file())
         return instance
 
     def read_settings_file() -> dict[str, Any]:
@@ -75,8 +74,8 @@ def load_settings(cls: type[T]) -> Callable[[], T]:
 
 @load_settings
 class Variables:
-    def __init__(self):
-        self._settings: dict[str, Any]
+    def __init__(self, settings):
+        self._settings: dict[str, Any] = settings
 
     def __getattr__(self, name):
         value = self._settings.get(name)
