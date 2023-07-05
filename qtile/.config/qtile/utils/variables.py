@@ -90,6 +90,24 @@ class Variables:
     def __repr__(self):
         return str(self._settings)
 
+    def create_diffs_dict(self, d1, d2):
+        diffs_dict = {}
+        for k1 in d1:
+            for k2 in d2:
+                if k2 not in d1:
+                    diffs_dict[k2] = d2[k2]
+            if k1 in d2:
+                if isinstance(d1[k1], dict):
+                    nested_diff = self.create_diffs_dict(d1[k1], d2[k1])
+                    if nested_diff:
+                        diffs_dict[k1] = nested_diff
+                else:
+                    diffs_dict[k1] = d2[k1]
+            else:
+                diffs_dict[k1] = d1[k1]
+
+        return diffs_dict
+
     def get(self, key, default=None):
         return self._settings.get(key, default)
 
