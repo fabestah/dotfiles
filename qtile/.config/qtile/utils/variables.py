@@ -50,6 +50,9 @@ default_settings: dict[str, Any] = {
 def load_settings(cls: type[T]) -> Callable[[], T]:
     def wrap() -> T:
         instance: T = cls(read_settings_file())
+        instance._settings = instance.create_diffs_dict(
+            default_settings, instance._settings
+        )
         return instance
 
     def read_settings_file() -> dict[str, Any]:
