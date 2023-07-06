@@ -95,9 +95,13 @@ class Variables:
 
     def create_diffs_dict(self, d1, d2):
         diffs_dict = {}
+
         for k1 in d1:
             for k2 in d2:
                 if k2 not in d1:
+                    logger.info(
+                        f"New key-value pair '{k2}: {d2[k2]}' added from settings.json"
+                    )
                     diffs_dict[k2] = d2[k2]
             if k1 in d2:
                 if isinstance(d1[k1], dict):
@@ -107,6 +111,9 @@ class Variables:
                 else:
                     diffs_dict[k1] = d2[k1]
             else:
+                logger.warning(
+                    f"Key-value pair '{k1}: {d1[k1]}' is missing from settings.json\nUsing default key-value pair '{k1}: {d1[k1]}' from default_settings"
+                )
                 diffs_dict[k1] = d1[k1]
 
         return diffs_dict
