@@ -4,6 +4,7 @@
 # Source
 plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
+plug "$HOME/.config/zsh/functions.zsh"
 
 # Plugins
 plug "zap-zsh/supercharge"
