@@ -18,7 +18,7 @@ alias la='LC_COLLATE=C ls -vAF'
 alias lla='LC_COLLATE=C ls -lqvhAF'
 
 # Pacman (Package Management)
-alias update-mirrors='rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist'
+alias update-mirrors='sudo systemctl start reflector.service'
 
 # Get Stuff
 alias getfs="df -PTh"
