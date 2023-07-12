@@ -22,3 +22,28 @@ rename_lower() {
         fi
     done
 }
+
+mv_dry() {
+    # Function for dry running the mv command
+    # !!! only works with 2 arguments atm !!!
+    # !!! This doesn't support the -t flag !!!
+
+    # check number of arguments
+    if [ $# -ne 2   ]; then
+        echo "<<< ERROR: must have 2 arguments , but $# given "
+        return 1
+    fi
+
+    # check if source item exist
+    if ! readlink -e "$1" > /dev/null; then
+        echo "<<< ERROR: " "$item" " doesn't exist"
+        return 1
+    fi
+
+    # check where file goes
+    if [ -d "$2"  ]; then
+        echo "Moving " "$1" " into " "$2" " directory"
+    else
+        echo "Renaming "  "$1" " to " "$2"
+    fi
+}
