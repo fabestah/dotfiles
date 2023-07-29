@@ -206,7 +206,7 @@ keys = [
     ),
     Key(
         [mod],
-        "c",
+        "v",
         lazy.spawn(var.applications["editor"]),
         desc="Launch code editor",
     ),
